@@ -15,9 +15,6 @@ class Page extends Component {
         this.setState(this.props.inputs)
     }
 
-    componentWillUnmount() {
-        this.props.setData_2(this.state.input_2)
-    }
 
 
     render() {
@@ -48,7 +45,10 @@ class Page extends Component {
                                     Input 2
                         </th>
                                 <td>
-                                    <input value={this.state.input_2} onChange={(e) => this.setState({ input_2: e.target.value })} className="inputs input_2" />
+                                    <input value={this.state.input_2} onChange={(e) => this.setState({ input_2: e.target.value }, () => {
+                                        if (this.props.setData_2)
+                                            this.props.setData_2(this.state.input_2)
+                                    })} className="inputs input_2" />
                                 </td>
                             </tr>
                         </tbody>
