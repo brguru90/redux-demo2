@@ -16,10 +16,7 @@ class Page extends Component {
     }
 
     componentWillUnmount() {
-        if (this.props) {
-            if (this.props.setData_2)
-                this.props.setData_2(this.state.input_2)
-        }
+        this.props.setData_2(this.state.input_2)
     }
 
 
@@ -83,9 +80,9 @@ const mapDispatchToProps = (dispatch) => {
             type: "SET_R1",
             payload: data
         }),
-        setData_2: (data) => dispatch(setData(1, data)),
-        resetData_1: (data) => dispatch(setData(2, data)),
-        resetData_2: (data) => dispatch(setData(3, data)),
+        setData_2: (data) => dispatch(setData(2, data)),
+        resetData_1: (data) => dispatch(setData(3, data)),
+        resetData_2: (data) => dispatch(setData(4, data)),
     }
 }
 
