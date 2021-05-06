@@ -1,0 +1,21 @@
+.Home{
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    .blk{
+        background-color:aliceblue;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .redux_data{
+        max-width: 500px;
+    }
+
+    .inputs{
+        min-width: 200px;
+    }
+}

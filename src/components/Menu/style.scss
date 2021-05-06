@@ -1,0 +1,16 @@
+.Menu {
+
+    ul {
+        list-style: none;
+
+        li {
+            display: inline;
+            margin-right: 40px;
+
+        }
+    }
+
+    li:nth-last-child(1) {
+        margin-right: 0px;
+    }
+}
