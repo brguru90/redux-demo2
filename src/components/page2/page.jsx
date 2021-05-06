@@ -11,20 +11,26 @@ import { useDispatch, useSelector } from "react-redux"
 export default function Page() {
     const dispatch = useDispatch()
 
+    const data_1=useSelector(state => state.data_1)
+    const data_2=useSelector(state => state.data_2)
 
-    const [input_1, set_input_1] = useState(useSelector(state => state.data_1))
-    const [input_2, set_input_2] = useState(useSelector(state => state.data_2))
+    const [input_1, set_input_1] = useState(data_1)
+    const [input_2, set_input_2] = useState(data_2)
 
 
     useEffect(() => {
-        console.log("update input_1", input_1)
-        dispatch(setData(1, input_1))
+        if (input_1) {
+            dispatch(setData(1, input_1))
+            console.log("update input_1", input_1)
+        }
 
     }, [input_1])
 
     useEffect(() => {
-        console.log("update input_2", input_1)
-        dispatch(setData(1, input_2))
+        if (input_1) {
+            dispatch(setData(2, input_2))
+            console.log("update input_2", input_1)
+        }
     }, [input_2])
 
 

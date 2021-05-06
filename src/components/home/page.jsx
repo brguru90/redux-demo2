@@ -4,14 +4,14 @@ import { connect } from "react-redux"
 import setData from "../../redux_management/action/actions"
 import Menu from "../Menu/menu.jsx"
 
- class Page extends Component {
+class Page extends Component {
 
     state = {
         input_1: "",
         input_2: ""
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.setState(this.props.inputs)
     }
 
@@ -69,19 +69,19 @@ import Menu from "../Menu/menu.jsx"
 
 const mapStateToProps = (state) => {
     console.log(state)
-   return {
-    inputs:{
-        input_1:state.data_1,
-        input_2:state.data_2
+    return {
+        inputs: {
+            input_1: state.data_1,
+            input_2: state.data_2
+        }
     }
-   }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         setData_1: (data) => dispatch({
-            type:"SET_R1",
-            payload:data
+            type: "SET_R1",
+            payload: data
         }),
         setData_2: (data) => dispatch(setData(1, data)),
         resetData_1: (data) => dispatch(setData(2, data)),
@@ -89,4 +89,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Page)
+export default connect(mapStateToProps, mapDispatchToProps)(Page)
